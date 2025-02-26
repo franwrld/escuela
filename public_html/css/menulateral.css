@@ -1,0 +1,74 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.welcomestext {
+    color: white;
+    text-align: center;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #202831;
+    overflow-x: hidden;
+    padding-top: 20px;
+    color: #fff;
+}
+  
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 0.5em;
+}
+  
+.sidebar a {
+    color: #ffffff;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidebar a:hover {
+    background-color: #444;
+}
+
+a.logout {
+    color: #f1434e;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    transition: 0.3s;
+}
+  
+a.logout:hover {
+    background-color: #444;
+}
+  
+@media screen and (max-width: 768px) {
+    .sidebar {
+      width: 100px;
+      padding-top: 10px;
+}
+  
+.sidebar a {
+      font-size: 16px;
+}
+  
+.content {
+      margin-left: 100px;
+    }
+}

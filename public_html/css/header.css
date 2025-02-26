@@ -1,0 +1,22 @@
+/* * {
+    border: red solid 1px;
+} */
+
+.header {
+    display: flex;
+    flex-direction: row;
+    margin-left: 250px;
+    padding: 20px;
+    background: #203338;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcomemsj {
+    color: #FFF;
+}
+
+.modousertext {
+    color: #FFF;
+}

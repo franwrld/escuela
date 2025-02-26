@@ -1,0 +1,21 @@
+.dashboardinfo {
+    display: flex;
+    flex-direction: column;
+}
+.locationimg {
+    height: 32px;
+    width: 32px;
+}
+
+.locationdiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.titlelocation {
+    margin: 12px;
+}

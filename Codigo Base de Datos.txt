@@ -1,0 +1,88 @@
+-- Crear la base de datos
+CREATE DATABASE school;
+USE school;
+
+-- Crear la tabla usuarios
+CREATE TABLE usuarios (
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    usuario VARCHAR(15) NOT NULL UNIQUE,
+    password VARCHAR(50) NOT NULL,
+    tipo ENUM('Administrador', 'Usuario') NOT NULL
+);
+
+UPDATE usuarios SET password = SHA1(password);
+
+-- Crear la tabla school
+CREATE TABLE school (
+    id_school INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(200) NOT NULL,
+    direccion VARCHAR(255) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    foto VARCHAR(255),
+    latitud DECIMAL(10, 8),
+    longitud DECIMAL(11, 8),
+    id_user INT,
+    FOREIGN KEY (id_user) REFERENCES usuarios(id_user) ON DELETE SET NULL
+);
+
+-- Crear la tabla grados
+CREATE TABLE grados (
+    id_grado INT AUTO_INCREMENT PRIMARY KEY,
+    grado VARCHAR(40) NOT NULL
+);
+
+-- Crear la tabla secciones
+CREATE TABLE secciones (
+    id_seccion INT AUTO_INCREMENT PRIMARY KEY,
+    seccion VARCHAR(1) NOT NULL
+);
+
+-- Crear la tabla alumnos
+CREATE TABLE alumnos (
+    id_alumno INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_completo VARCHAR(40) NOT NULL,
+    direccion VARCHAR(255) NOT NULL,
+    telefono INT(8),
+    email VARCHAR(50),
+    foto VARCHAR(255),
+    genero ENUM('Masculino', 'Femenino') NOT NULL,
+    latitud DECIMAL(10, 8) NOT NULL,
+    longitud DECIMAL(11, 8) NOT NULL,
+    id_grado INT NOT NULL,
+    id_seccion INT NOT NULL,
+    id_school INT NOT NULL,
+    FOREIGN KEY (id_grado) REFERENCES grados(id_grado) ON DELETE SET NULL,
+    FOREIGN KEY (id_seccion) REFERENCES secciones(id_seccion) ON DELETE SET NULL,
+    FOREIGN KEY (id_school) REFERENCES school(id_school) ON DELETE CASCADE
+);
+
+-- Crear la tabla padres
+CREATE TABLE padres (
+    id_padre INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_padre VARCHAR(50) NOT NULL,
+    direccion_padre VARCHAR(255) NOT NULL,
+    telefono_padre INT(8) NOT NULL
+);
+
+-- Crear la tabla padres_alumnos (relación muchos a muchos)
+CREATE TABLE padres_alumnos (
+    id_padre_alumno INT AUTO_INCREMENT PRIMARY KEY,
+    id_alumno INT NOT NULL,
+    id_padre INT NOT NULL,
+    parentesco VARCHAR(20) NOT NULL,
+    FOREIGN KEY (id_alumno) REFERENCES alumnos(id_alumno) ON DELETE CASCADE,
+    FOREIGN KEY (id_padre) REFERENCES padres(id_padre) ON DELETE CASCADE
+);
+
+
+INSERTAR DATOS
+
+INSERT INTO usuarios (nombre, usuario, password, tipo) VALUES
+('Wilfredo Chacon', 'wilfredoadmin', SHA1('admin'), 'Administrador'),
+('Hector Alexander Colindres Montoya', 'alex2025', SHA1('user'), 'Usuario'),('Francisco Ruiz', 'franciscoadmin', SHA1('admin'), 'Administrador'),
+('Vanessa Yamileth Serrano Hernandez', 'vanessa17', SHA1('user'), 'Usuario');
+
+
+INSERT INTO secciones (seccion) VALUES
+('A'),('B'),('C'),('D'),('E'),('F'),('G'),('H'),('I'),('J'),('K'),('L'),('M'),('N'),('O'),('P'),('Q'),('R'),('S'),('T'),('U'),('V'),('W'),('X'),('Y'),('Z');
