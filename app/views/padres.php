@@ -87,8 +87,9 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Telefono</label>
-                    <input name="telefono_padre" id="telefono_padre" type="text" class="form-control" placeholder="Telefono" aria-label="Telefono">
+                    <label class="form-label">Teléfono</label>
+                    <input name="telefono_padre" id="telefono_padre" type="text" class="form-control" placeholder="Telefono" aria-label="telefono" maxlength="8" required>
+                    <div id="telefonoErrorPadre" class="text-danger" style="display: none;">Solo se aceptan numeros, Maximo 8 Digitios.</div>
                 </div>
 
                 <label class="form-label">Parentesco</label>

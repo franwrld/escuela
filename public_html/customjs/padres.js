@@ -9,6 +9,7 @@ const formContent = document.querySelector("#formContent");
 const formPadre=document.querySelector("#formPadre");
 const btnCancelar = document.querySelector("#btnCancelar");
 const btnGuardar = document.querySelector("#btnGuardar");
+const telefonoInputPadre = document.querySelector("#telefono_padre");
 
 const API = new Apix();
 
@@ -51,9 +52,35 @@ function cargarDatos() {
     );
 }
 
+telefonoInputPadre.addEventListener("input", function (event) {
+    // Eliminar cualquier carácter que no sea un número
+    this.value = this.value.replace(/\D/g, '');
+
+    // Limitar la longitud a 8 dígitos
+    if (this.value.length > 8) {
+        this.value = this.value.slice(0, 8);
+    }
+
+    // Mostrar u ocultar el mensaje de error
+    const telefonoErrorPadre = document.querySelector("#telefonoErrorPadre");
+    if (this.value.length !== 8) {
+        telefonoErrorPadre.style.display = "block";
+    } else {
+        telefonoErrorPadre.style.display = "none";
+    }
+});
 // Guardar Form Cambios
 function guardarPadresCambios(event) {
   event.preventDefault();
+  // Validar el campo de teléfono
+  const telefono = document.querySelector("#telefono_padre").value;
+  const telefonoErrorPadre = document.querySelector("#telefonoErrorPadre");
+  if (telefono.length !== 8 || !/^\d+$/.test(telefono)) {
+      telefonoErrorPadre.style.display = "block"; // Mostrar el mensaje de error
+      return; // Detener el envío del formulario
+  } else {
+      telefonoErrorPadre.style.display = "none"; // Ocultar el mensaje de error
+  }
   const formData = new FormData(formPadre);
   
   API.post(formData, "padres/update").then(

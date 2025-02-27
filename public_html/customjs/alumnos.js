@@ -16,6 +16,9 @@ const btnCancelarPadres = document.querySelector("#btnCancelarPadres");
 const formAlumnos=document.querySelector("#formAlumnos");
 const formPadres=document.querySelector("#formPadres");
 const btnGuardar = document.querySelector("#btnGuardar");
+// Telefono validar 8 digitos
+const telefonoInput = document.querySelector("#telefono");
+const telefonoInputPadre = document.querySelector("#telefono_padre");
 //Foto
 const divFoto = document.querySelector("#divfoto");
 const inputFoto = document.querySelector("#foto");
@@ -141,10 +144,55 @@ function cargarSecciones() {
     );
 }
 
+telefonoInputPadre.addEventListener("input", function (event) {
+    // Eliminar cualquier carácter que no sea un número
+    this.value = this.value.replace(/\D/g, '');
+
+    // Limitar la longitud a 8 dígitos
+    if (this.value.length > 8) {
+        this.value = this.value.slice(0, 8);
+    }
+
+    // Mostrar u ocultar el mensaje de error
+    const telefonoErrorPadre = document.querySelector("#telefonoErrorPadre");
+    if (this.value.length !== 8) {
+        telefonoErrorPadre.style.display = "block";
+    } else {
+        telefonoErrorPadre.style.display = "none";
+    }
+});
+
+// Validar el campo de teléfono en tiempo real
+telefonoInput.addEventListener("input", function (event) {
+    // Eliminar cualquier carácter que no sea un número
+    this.value = this.value.replace(/\D/g, '');
+
+    // Limitar la longitud a 8 dígitos
+    if (this.value.length > 8) {
+        this.value = this.value.slice(0, 8);
+    }
+
+    // Mostrar u ocultar el mensaje de error
+    const telefonoError = document.querySelector("#telefonoError");
+    if (this.value.length !== 8) {
+        telefonoError.style.display = "block";
+    } else {
+        telefonoError.style.display = "none";
+    }
+});
+
 function guardarAlumnos(event) {
     event.preventDefault();
-    const formData = new FormData(formAlumnos);
-  
+    // Validar el campo de teléfono
+    const telefono = document.querySelector("#telefono").value;
+    const telefonoError = document.querySelector("#telefonoError");
+    if (telefono.length !== 8 || !/^\d+$/.test(telefono)) {
+        telefonoError.style.display = "block"; // Mostrar el mensaje de error
+        return; // Detener el envío del formulario
+    } else {
+        telefonoError.style.display = "none"; // Ocultar el mensaje de error
+    }
+
     // Verificar que se hayan ingresado latitud y longitud
     const latitud = document.getElementById('latitud').value;
     const longitud = document.getElementById('longitud').value;
@@ -157,7 +205,8 @@ function guardarAlumnos(event) {
         });
         return;
     }
-  
+
+    const formData = new FormData(formAlumnos);
     API.post(formData, "alumnos/guardar")
         .then((data) => {
             if (data.success) {
@@ -181,6 +230,17 @@ function guardarAlumnos(event) {
 
 function guardarPadres(event){
     event.preventDefault();
+
+    // Validar el campo de teléfono
+    const telefono = document.querySelector("#telefono_padre").value;
+    const telefonoErrorPadre = document.querySelector("#telefonoErrorPadre");
+    if (telefono.length !== 8 || !/^\d+$/.test(telefono)) {
+        telefonoErrorPadre.style.display = "block"; // Mostrar el mensaje de error
+        return; // Detener el envío del formulario
+    } else {
+        telefonoErrorPadre.style.display = "none"; // Ocultar el mensaje de error
+    }
+
     const formData = new FormData(formPadres);
     API.post(formData,"alumnos/guardarPadres").then(
         data=>{
