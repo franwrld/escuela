@@ -10,7 +10,7 @@ class Escuelas extends BaseDeDatos {
 
     public function getAll() {
         return $this->executeQuery("SELECT s.id_school, s.nombre, s.direccion, s.email, s.latitud, s.longitud, u.nombre AS nombreusuario FROM school s INNER
-        JOIN usuarios u USING(id_user) ORDER BY id_school;");
+        JOIN usuarios u USING(id_user) ORDER BY id_school DESC;");
     }
     
     public function getOneEscuela($id) {

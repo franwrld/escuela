@@ -9,7 +9,7 @@ class Padres extends BaseDeDatos {
     }
 
     public function getAll(){
-        return $this->executeQuery("SELECT id_padre, nombre_padre, direccion_padre, telefono_padre from padres order by id_padre");
+        return $this->executeQuery("SELECT id_padre, nombre_padre, direccion_padre, telefono_padre from padres order by id_padre DESC;");
     }
 
     public function getAllPadreAlumno(){
