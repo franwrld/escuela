@@ -17,7 +17,7 @@
     <?php include_once "app/views/sections/header.php"; ?>
     <!-- Contenido Reporte -->
     <div class="contenido">
-        <h2>Reportes de Escuelas</h2>
+        <h2>Reportes de Alumnos</h2>
     <div class="selectreporte">
         <!-- Selector de Escuela -->
         <div class="mb-3">
