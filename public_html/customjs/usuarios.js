@@ -124,7 +124,7 @@ function crearTabla() {
             if ((index>=recordIni) && (index<=recordFin)){
                         
                 html+=`
-                    <tr>
+                    <tr class="table-info">
                     <td>${item.id_user}</td>
                     <td>${item.nombre}</td>
                     <td>${item.usuario}</td>

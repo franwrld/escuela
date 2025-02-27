@@ -18,7 +18,7 @@
     <!-- CONTENIDO -->
     <div class="contenido">
         <!-- NAV, Buscar y Agregar -->
-        <nav class="navbar bg-body-tertiary">
+        <nav class="navbar" style="background-color:rgb(186, 239, 255)">
             <div class="container-fluid">
                 <a class="navbar-brand"><img src="public_html/iconos/parents24px.png"> Padres</a>
                 <form class="d-flex" role="search">
@@ -29,8 +29,8 @@
         <!-- TABLE -->
         <div id="ContenidoTabla">
             `<div id="contentTable">
-                <table class="table table-striped-columns" id="tablaEscuela">
-                    <thead>
+                <table class="table table-bordered" id="tablaEscuela">
+                    <thead class="table-dark">
                         <th>ID</th>
                         <th>Nombre Padre</th>
                         <th>Parentesco</th>

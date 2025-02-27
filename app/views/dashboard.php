@@ -20,7 +20,7 @@
         <!-- Contenido Mapa Foto Escuela Alumnos -->
         <div class="mapaescuelafotoalumnos">
             <!-- Foto de la escuela -->
-            <img class="d-none" src="public_html/imagenes/escuela.jpg" alt="Foto de la escuela" style="width:100%; max-width:600px; height:auto; display:block; margin:0 auto;">
+            <img class="d-none" src="public_html/imagenes/escuela.jpg" alt="Foto de la escuela" style="width:100%; max-width:600px; height: auto; display:block; margin:0 auto;">
             <div class="locationdiv">
                 <h4 class="titlelocation">Alumnos</h4>
                 <img class="locationimg" src="public_html/iconos/locationazul32px.png">

@@ -18,7 +18,7 @@
     <!-- CONTENIDO -->
     <div class="contenido">
         <!-- NAV, Buscar y Agregar -->
-        <nav id="SearchNavbar" class="navbar bg-body-tertiary">
+        <nav id="SearchNavbar" class="navbar" style="background-color:rgb(186, 239, 255)">
             <div class="container-fluid">
                 
                 <a class="navbar-brand"><img src="public_html/iconos/escuela24px.png"> Escuelas</a>
@@ -30,9 +30,9 @@
         </nav>
         <!-- TABLE -->
         <div id="ContenidoTabla">
-            `<div id="contentTable">
-                <table class="table table-striped-columns" id="tablaEscuela">
-                    <thead>
+            <div id="contentTable">
+                <table class="table table-bordered" id="tablaEscuela">
+                    <thead class="table-dark">
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Direccion</th>
@@ -43,13 +43,13 @@
                         <th>Opciones</th>
                     </thead>
                     <tbody>
-                        <td>1</td>
+                        <td class="table-info">1</td>
                         <td>Escuela MyControlGPS</td>
-                        <td>Ave. Independencia, Santa Ana, El Salvador</td>
+                        <td class="table-info">Ave. Independencia, Santa Ana, El Salvador</td>
                         <td>escuela@example.com</td>
-                        <td>121033</td>
+                        <td class="table-info">121033</td>
                         <td>124144</td>
-                        <td>User</td>
+                        <td class="table-info">User</td>
                         <td>
                             
                             <button class="buttonmap" type="button" id="btnVerMapaEA" onclick="verMapa()"><img src="public_html/iconos/mapaicon32px.png"></button>

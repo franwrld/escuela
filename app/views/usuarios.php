@@ -18,7 +18,7 @@
     <!-- CONTENIDO -->
     <div class="contenido">
         <!-- NAV, Buscar y Agregar -->
-        <nav id="SearchNavbar" class="navbar bg-body-tertiary">
+        <nav id="SearchNavbar" class="navbar" style="background-color:rgb(186, 239, 255)">
             <div class="container-fluid">
                 
                 <a class="navbar-brand"><img src="public_html/iconos/worldgraduado24px.png"> Usuarios</a>
@@ -31,8 +31,8 @@
         <!-- TABLE -->
         <div id="ContenidoTabla">
             `<div id="contentTable">
-                <table class="table table-striped-columns" id="tablaUsuarios">
-                    <thead>
+                <table class="table table-bordered" id="tablaUsuarios">
+                    <thead class="table-dark">
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Usuario</th>

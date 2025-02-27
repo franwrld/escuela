@@ -373,7 +373,7 @@ function crearTabla() {
         (item, index) => {
             if ((index >= recordIni) && (index <= recordFin)) {
                 html += `
-                    <tr>
+                    <tr class="table-info">
                         <td>${item.id_alumno}</td>
                         <td>${item.nombre_completo}</td>
                         <td>${item.direccion}</td>

@@ -1,117 +1,117 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #242c35;
-}
-
-.formlogintodo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-
-#formlogin {
-    display: grid;
-    place-items: center;
-    width: 300px;
-    height: 472px;
-    padding: 25px;
-    background-color: #242c35;
-    box-shadow: 0px 15px 60px #ffffff;
-    outline: 1px solid #242c35;
-    border-radius: 10px;
-}
-
-#welcome-lines {
-    text-align: center;
-    line-height: 1;
-}
-
-#welcome-line-1 {
-    color: #ff9900ff;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    font-size: 40px;
-}
-
-#welcome-line-2 {
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    margin-top: 17px;
-}
-
-#input-area {
-    margin-top: 40px;
-}
-
-.formlogin-inp {
-    padding: 11px 25px;
-    background: #ffffff;
-    font-family: 'Roboto', sans-serif;
-    border: 1px solid #e3e3e3;
-    line-height: 1;
-    border-radius: 8px;
-}
-
-.formlogin-inp:focus {
-    border: 1px solid #00FF7F;
-}
-
-.formlogin-inp:first-child {
-    margin-bottom: 15px;
-}
-
-.formlogin-inp input {
-    width: 100%;
-    background: none;
-    font-size: 13.4px;
-    color: rgb(0, 0, 0);
-    font-family: 'Roboto', sans-serif;
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
-.formlogin-inp input:focus {
-    outline: none;
-}
-
-#submit-button-cvr {
-    margin-top: 20px;
-}
-
-#submit-button {
-    display: block;
-    width: 100%;
-    color: rgb(255, 255, 255);
-    background-color: transparent;
-    font-weight: 600;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    margin: 0;
-    padding: 14px 13px 12px 13px;
-    border: 0;
-    outline: 1px solid rgb(255, 255, 255);
-    border-radius: 8px;
-    line-height: 1;
-    cursor: pointer;
-    transition: all ease-in-out .3s;
-}
-
-#submit-button:hover {
-    transition: all ease-in-out .3s;
-    background-color: rgb(255, 255, 255);
-    color: #161616;
-    cursor: pointer;
-}
-
 .loginmensaje {
     font-family: 'Roboto', sans-serif;
     color: red;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    color: red;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 700;
 }
+
+.fancy {
+    background-color: transparent;
+    border: 2px solid #0858f7;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 1.25em 2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
+   }
+   
+   .fancy::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: #0858f7;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+   }
+   
+   .fancy .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #0858f7;
+   }
+   
+   .fancy .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #ffffff;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+   }
+   
+   .fancy .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #ffffff;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+   }
+   
+   .fancy .bottom-key-2 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #ffffff;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+   }
+   
+   .fancy:hover {
+    color: white;
+    background: #0d6efd;
+   }
+   
+   .fancy:hover::before {
+    width: 0.9375rem;
+    background: white;
+   }
+   
+   .fancy:hover .text {
+    color: white;
+    padding-left: 1.5em;
+   }
+   
+   .fancy:hover .top-key {
+    left: -2px;
+    width: 0px;
+   }
+   
+   .fancy:hover .bottom-key-1,
+    .fancy:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
+   }
+ 

@@ -4,15 +4,16 @@
 ?>
 <body>
 <!-- Login 9 - Bootstrap Brain Component -->
-    <section class="bg-dark vh-100 vw-100 d-flex align-items-center justify-content-center py-5 py-md-5 py-xl-8">
+    <section class="bg-light vh-100 vw-100 d-flex align-items-center justify-content-center py-5 py-md-5 py-xl-8">
         <div class="container">
             <div class="row gy-4 align-items-center">
                 <div class="col-12 col-md-6 col-xl-7">
-                    <div class="d-flex justify-content-center text-bg-dark">
+                    <div class="d-flex justify-content-center text-bg-light">
                         <div class="col-12 col-xl-9">
                             <img class="img-fluid rounded mb-4" loading="lazy" src="<?php echo URL;?>public_html/iconos/logoescuela400x214.png" alt="logo">
-                            <h2 class="h1 mb-4">Bienvenido.</h2>
-                            <p class="lead mb-5">Accede a tus datos personales de esta institución en linea.</p>
+                            <h3 class="h3 mb-4">Bienvenido al sistema.</h3>
+                            <p class="lead mb-2">Accede a la información de las escuelas y sus alumnos</p>
+                            <p class="lead mb-5">con el mapa de Google obten la ubicación más fácilmente</p>
                         </div>
                     </div>
                 </div>
@@ -22,7 +23,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="mb-4 d-flex align-items-center justify-content-center">
-                                        <h3>Iniciar Sesión</h3>
+                                        <h3>Ingresa tus credenciales</h3>
                                     </div>
                                 </div>
                             </div>
@@ -43,11 +44,13 @@
                                     <div class="col-12">
                                         <br>
                                     </div>
-                                    <div class="col-12">
-                                        <div class="d-grid">
-                                            <button class="btn btn-primary btn-lg" type="submit">INGRESAR</button>
-                                        </div>
-                                    </div>
+
+                                    <button class="fancy" type="submit">
+                                        <span class="top-key"></span>
+                                        <span class="text">INICIAR SESIÓN</span>
+                                        <span class="bottom-key-1"></span>
+                                        <span class="bottom-key-2"></span>
+                                    </button >
                                 </div>
                                 <!-- Mensaje de alerta si el usuario y password son incorrectos -->
                                 <div class="loginmensaje" role="alert" id="mensaje">

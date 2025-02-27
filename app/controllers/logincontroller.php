@@ -33,7 +33,7 @@ class LoginController extends Controller {
                 $info = array("success" => true, "msg" => "Usuario correcto", "url" => URL . "escuelauser");
             }
         } else {
-            $info = array("success" => false, "msg" => "Usuario o Contraseña incorrecto");
+            $info = array("success" => false, "msg" => "Usuario o Contraseña Incorrectos");
         }
         echo json_encode($info);
     }
