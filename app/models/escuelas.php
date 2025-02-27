@@ -14,8 +14,10 @@ class Escuelas extends BaseDeDatos {
     }
     
     public function getOneEscuela($id) {
-        return $this->executeQuery("SELECT id_school, nombre, direccion, email, latitud, longitud, foto FROM school WHERE id_school='{$id}'");
+        return $this->executeQuery("SELECT s.id_school, s.nombre, s.direccion, s.email, s.latitud, s.longitud, s.foto, u.id_user, u.nombre AS nombreusuario 
+        FROM school s INNER JOIN usuarios u USING(id_user) WHERE id_school='{$id}'");
     }
+
     public function getEscuelaByName($nombre) {
         return $this->executeQuery("SELECT id_school, nombre, direccion, email, latitud, longitud FROM school WHERE nombre='{$nombre}'");
     }

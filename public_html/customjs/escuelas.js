@@ -75,8 +75,16 @@ document.getElementById('search_user').addEventListener('input', function() {
                     item.classList.add('dropdown-item');
                     item.textContent = user.nombre;
                     item.addEventListener('click', () => {
+                        // Actualizar el campo de búsqueda con el nombre del usuario seleccionado
                         document.getElementById('search_user').value = user.nombre;
+
+                        // Actualizar el campo oculto con el ID del usuario seleccionado
                         document.getElementById('id_user').value = user.id_user;
+
+                        // Actualizar el campo que muestra el nombre del usuario vinculado
+                        document.getElementById('nombre_usuario_vinculado').value = user.nombre;
+
+                        // Ocultar los resultados de la búsqueda
                         results.innerHTML = '';
                     });
                     results.appendChild(item);
@@ -253,8 +261,9 @@ function limpiarForm(op) {
     formSchool.reset();
     document.querySelector("#id_school").value = "0";
     divFoto.innerHTML = "";
+    document.querySelector("#nombre_usuario_vinculado").value = "";
+    document.querySelector("#search_user").value = "";
 }
-
 function aplicarFiltro(element) {
     element.preventDefault();
     objDatos.filter = this.value;
@@ -274,6 +283,7 @@ function cancelarEscuela() {
     ContenidoTabla.classList.remove("d-none");
     SearchNavbar.classList.remove("d-none");
     formContent.classList.add("d-none");
+    limpiarForm();
     cargarDatos();
 }
 
@@ -302,17 +312,26 @@ function editarEscuela(id) {
 }
 
 function mostrarDatosForm(record) {
-    const { id_school, nombre, direccion, email, foto,latitud, longitud, id_user} = record;
+    const { id_school, nombre, direccion, email, foto, latitud, longitud, nombreusuario, id_user } = record;
     document.querySelector("#id_school").value = id_school;
-    document.querySelector("#nombre").value = nombre;
+    document.querySelector("#nombre").value = nombre; // Nombre de la escuela
     document.querySelector("#direccion").value = direccion;
     document.querySelector("#email").value = email;
     divFoto.innerHTML = `<img src="${foto}" class="h-100 w-100" style="object-fit:contain;">`;
     document.querySelector("#latitud").value = latitud;
     document.querySelector("#longitud").value = longitud;
+
+    // Asignar el nombre del usuario vinculado al nuevo campo
+    document.querySelector("#nombre_usuario_vinculado").value = nombreusuario;
+
+    // Asignar el ID del usuario vinculado al campo oculto
     document.querySelector("#id_user").value = id_user;
+
+    // El campo de búsqueda siempre está habilitado
+    document.querySelector("#search_user").disabled = false;
+
     actualizarMarcadorMapa(parseFloat(latitud), parseFloat(longitud));
-  }
+}
 
   function eliminarEscuela(id) {
     Swal.fire({

@@ -93,6 +93,10 @@
                 </div>
 
                 <div class="mb-3">
+                    <label class="form-label">Usuario vinculado</label>
+                    <input type="text" name="nombre_usuario_vinculado" id="nombre_usuario_vinculado" class="form-control" readonly>
+                </div>
+                <div class="mb-3">
                     <label class="form-label">Escribe el nombre de un usuario para vincularlo a la escuela</label>
                     <input type="text" name="search_user" id="search_user" class="form-control" placeholder="Buscar usuario..." aria-label="Buscar usuario">
                     <input type="hidden" name="id_user" id="id_user" value="">
