@@ -101,8 +101,19 @@ class Escuelas extends BaseDeDatos {
     }
 
     public function update($data, $img) {
-        return $this->executeInsert("UPDATE school SET nombre='{$data["nombre"]}', direccion='{$data["direccion"]}', email='{$data["email"]}', latitud='{$data["latitud"]}', longitud='{$data["longitud"]}', foto=IF('{$img}'='', foto, '{$img}') WHERE id_school={$data["id_school"]}");
+        return $this->executeInsert("
+            UPDATE school 
+            SET nombre='{$data["nombre"]}',
+                direccion='{$data["direccion"]}',
+                email='{$data["email"]}',
+                latitud='{$data["latitud"]}',
+                longitud='{$data["longitud"]}',
+                foto=IF('{$img}'='', foto, '{$img}'),
+                id_user='{$data["id_user"]}'
+            WHERE id_school={$data["id_school"]}
+        ");
     }
+    
 
     public function getOnePadre($id) {
         return $this->executeQuery("SELECT id_padre, nombre, direccion, telefono from padres where id_padre='{$id}'");

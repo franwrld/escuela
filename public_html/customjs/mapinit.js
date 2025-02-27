@@ -16,6 +16,12 @@ function initMap() {
         center: sv // Centrar el mapa en El Salvador
     });
 
+    // Llamada al resize un momento después
+    setTimeout(function() {
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(sv); // Volver a centrar en El Salvador (opcional)
+    }, 300)
+
     // Cargar las escuelas y los alumnos
     cargarEscuelas();
     cargarAlumnos();

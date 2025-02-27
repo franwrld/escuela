@@ -10,9 +10,8 @@
     <h4 class="welcomestext"><img src="public_html/iconos/menuside24px.png"> <span class="nuser"><?php echo $_SESSION["usuario"]; ?></h4>
     <hr>
     <!-- Opciones Menu Lateral -->
-    <a href="<?php echo URL;?>dashboarduser"><img src="public_html/iconos/home24px.png"> Dashboard</a>
     <hr>
-    <a href="<?php echo URL;?>escuelauser"><img src="public_html/iconos/escuela24px.png"> Escuelas</a>
+    <a href="<?php echo URL;?>escuelauser"><img src="public_html/iconos/escuela24px.png"> Escuela</a>
     <hr>
     <a href="<?php echo URL;?>alumnosuser"><img src="public_html/iconos/alumnos24px.png"> Alumnos</a>
 

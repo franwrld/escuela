@@ -81,8 +81,10 @@ class EscuelasController extends Controller {
             if (count($datosEscuela) > 0) {
                 $info = array('success' => false, 'msg' => "La escuela ya existe.");
             } else {
-                // Incluir el ID del usuario en los datos
-                $_POST["id_user"] = $_SESSION["id_user"];
+                // Solo si no viene id_user desde el formulario, toma el de la sesión
+                if (empty($_POST["id_user"])) {
+                    $_POST["id_user"] = $_SESSION["id_user"];
+                }
                 $records = $this->escuela->guardar($_POST, $img);
                 $info = array('success' => true, 'msg' => "La escuela se ha guardado con éxito.");
             }
