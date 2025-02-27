@@ -16,7 +16,7 @@ class AlumnosUser extends BaseDeDatos {
              INNER JOIN grados g ON a.id_grado = g.id_grado
              INNER JOIN secciones s ON a.id_seccion = s.id_seccion
              INNER JOIN school sc ON a.id_school = sc.id_school
-             ORDER BY a.id_alumno;"
+             ORDER BY a.id_alumno DESC;"
         );
     }
 

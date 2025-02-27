@@ -302,7 +302,7 @@ function editarEscuela(id) {
 }
 
 function mostrarDatosForm(record) {
-    const { id_school, nombre, direccion, email, foto,latitud, longitud } = record;
+    const { id_school, nombre, direccion, email, foto,latitud, longitud, id_user} = record;
     document.querySelector("#id_school").value = id_school;
     document.querySelector("#nombre").value = nombre;
     document.querySelector("#direccion").value = direccion;
@@ -310,6 +310,7 @@ function mostrarDatosForm(record) {
     divFoto.innerHTML = `<img src="${foto}" class="h-100 w-100" style="object-fit:contain;">`;
     document.querySelector("#latitud").value = latitud;
     document.querySelector("#longitud").value = longitud;
+    document.querySelector("#id_user").value = id_user;
     actualizarMarcadorMapa(parseFloat(latitud), parseFloat(longitud));
   }
 

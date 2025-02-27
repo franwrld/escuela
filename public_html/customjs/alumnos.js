@@ -182,7 +182,7 @@ function guardarAlumnos(event) {
 function guardarPadres(event){
     event.preventDefault();
     const formData = new FormData(formPadres);
-    API.post(formData,"alumnosuser/guardarPadres").then(
+    API.post(formData,"alumnos/guardarPadres").then(
         data=>{
             if (data.success){
                 cancelarPadres();

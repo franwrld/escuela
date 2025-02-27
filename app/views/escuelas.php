@@ -99,22 +99,23 @@
                     <div id="userResults" class="dropdown-menu"></div>
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Latitud</label>
-                    <input name="latitud" id="latitud" type="text" class="form-control" placeholder="Latitud" aria-label="Latitud">
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Longitud</label>
-                    <input name="longitud" id="longitud" type="text" class="form-control" placeholder="Longitud" aria-label="Longitud">
-                </div>
-                <h4>Marca en el mapa tu lugar de residencia.</h4>
+                <h4>Marca en el mapa la ubicación de la escuela.</h4>
                 <hr>
                 <div id="mapEscuela" style="height: 400px; max-width: 100%; margin: 0 auto;"></div>
                 <hr>
                 <div class="mb-3">
                     <label class="form-label">Dirección</label>
                     <input name="direccion" id="direccion" type="text" class="form-control" placeholder="Dirección" aria-label="Dirección" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Latitud</label>
+                    <input name="latitud" id="latitud" type="text" class="form-control" placeholder="Latitud" aria-label="Latitud" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Longitud</label>
+                    <input name="longitud" id="longitud" type="text" class="form-control" placeholder="Longitud" aria-label="Longitud" readonly>
                 </div>
 
                 <div class="row mb-3">

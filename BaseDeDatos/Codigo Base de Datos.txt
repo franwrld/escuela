@@ -76,7 +76,7 @@ CREATE TABLE padres_alumnos (
 );
 
 
-INSERTAR DATOS
+INSERTAR DATOS EJEMPLO USUARIOS
 
 INSERT INTO usuarios (nombre, usuario, password, tipo) VALUES
 ('Wilfredo Chacon', 'wilfredoadmin', SHA1('admin'), 'Administrador'),

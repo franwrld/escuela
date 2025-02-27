@@ -32,7 +32,7 @@
         <!-- Botón Ver Reporte -->
         <div class="formbtn">
             <button class="btnverreporte" type="button" id="btnViewReport">
-                <img src="<?php echo URL; ?>public_html/iconos/reportes24px.png" alt="x"/> Ver Reporte
+                <img src="<?php echo URL; ?>public_html/iconos/informe24px.png" alt="x"/> Ver Reporte
             </button>
         </div>
         <!-- Aquí se muestra el reporte -->
