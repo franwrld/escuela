@@ -14,7 +14,7 @@ class Padres extends BaseDeDatos {
 
     public function getAllPadreAlumno(){
         return $this->executeQuery("SELECT p.id_padre,p.nombre_padre,pa.parentesco, p.direccion_padre, p.telefono_padre, a.nombre_completo 
-        FROM alumnos a INNER JOIN padres_alumnos pa ON a.id_alumno = pa.id_alumno INNER JOIN padres p ON pa.id_padre = p.id_padre;");
+        FROM alumnos a INNER JOIN padres_alumnos pa ON a.id_alumno = pa.id_alumno INNER JOIN padres p ON pa.id_padre = p.id_padre DESC;");
     }
 
     /*public function update($data) {
