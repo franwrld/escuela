@@ -194,5 +194,39 @@ class Alumnos extends BaseDeDatos {
         );
     }
 
+    // Reportes
+    public function getAlumnosReporte($data) {
+        $condicion = "";
+        if (isset($data["id_school"]) && $data["id_school"] != "0") {
+            $condicion .= " AND a.id_school = '{$data["id_school"]}'";
+        }
+    
+        $query = "
+            SELECT 
+                a.id_alumno,
+                a.nombre_completo,
+                a.genero,
+                s.nombre AS nombre_escuela,
+                g.grado,
+                p.nombre_padre,
+                pa.parentesco,
+                p.telefono_padre
+            FROM 
+                alumnos a
+            LEFT JOIN 
+                school s ON a.id_school = s.id_school
+            LEFT JOIN 
+                grados g ON a.id_grado = g.id_grado
+            LEFT JOIN 
+                padres_alumnos pa ON a.id_alumno = pa.id_alumno
+            LEFT JOIN 
+                padres p ON pa.id_padre = p.id_padre
+            WHERE 
+                1=1 $condicion
+        ";
+    
+        return $this->executeQuery($query);
+    }
+
 
 }

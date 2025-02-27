@@ -370,7 +370,6 @@ function initMapEscuela(latitud, longitud) {
         });
     }
 
-    // Agregar un evento de clic al mapa para añadir/actualizar el marcador
     mapEscuela.addListener('click', function (event) {
         if (markerEscuela) {
             markerEscuela.setPosition(event.latLng); // Actualizar la posición del marcador
