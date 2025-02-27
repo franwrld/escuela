@@ -476,14 +476,18 @@ function editarAlumno(id) {
       });
   }
 
-function mostrarDatosForm(record) {
+  function mostrarDatosForm(record) {
     const { id_alumno, nombre_completo, direccion, telefono, email, foto, genero, latitud, longitud, id_grado, id_seccion, id_school } = record;
     document.querySelector("#id_alumno").value = id_alumno;
     document.querySelector("#nombre_completo").value = nombre_completo;
     document.querySelector("#direccion").value = direccion;
     document.querySelector("#telefono").value = telefono;
     document.querySelector("#email").value = email;
-    divFoto.innerHTML = `<img src="${foto}" class="h-100 w-100" style="object-fit:contain;">`;
+    if (foto) {
+        divFoto.innerHTML = `<img src="${foto}" class="h-100 w-100" style="object-fit:contain;">`;
+    } else {
+        divFoto.innerHTML = ""; // Limpiar si no hay foto
+    }
     document.querySelector("#genero").value = genero;
     document.querySelector("#latitud").value = latitud;
     document.querySelector("#longitud").value = longitud;

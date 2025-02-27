@@ -514,7 +514,11 @@ function mostrarDatosForm(record) {
     document.querySelector("#direccion").value = direccion;
     document.querySelector("#telefono").value = telefono;
     document.querySelector("#email").value = email;
-    divFoto.innerHTML = `<img src="${foto}" class="h-100 w-100" style="object-fit:contain;">`;
+    if (foto) {
+        divFoto.innerHTML = `<img src="${foto}" class="h-100 w-100" style="object-fit:contain;">`;
+    } else {
+        divFoto.innerHTML = ""; // Limpiar si no hay foto
+    }
     document.querySelector("#genero").value = genero;
     document.querySelector("#latitud").value = latitud;
     document.querySelector("#longitud").value = longitud;

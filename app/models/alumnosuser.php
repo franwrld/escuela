@@ -105,19 +105,21 @@ class AlumnosUser extends BaseDeDatos {
     }
 
     public function updateUser($data, $img) {
-        return $this->executeInsert("UPDATE alumnos SET 
-            nombre_completo='{$data["nombre_completo"]}', 
-            direccion='{$data["direccion"]}', 
-            telefono='{$data["telefono"]}', 
-            email='{$data["email"]}', 
-            foto='{$img}', 
-            genero='{$data["genero"]}', 
-            latitud='{$data["latitud"]}', 
-            longitud='{$data["longitud"]}', 
-            id_grado='{$data["id_grado"]}', 
-            id_seccion='{$data["id_seccion"]}', 
-            id_school='{$data["id_school"]}'
-            WHERE id_alumno={$data["id_alumno"]}");
+        return $this->executeInsert("
+            UPDATE alumnos SET 
+                nombre_completo='{$data["nombre_completo"]}', 
+                direccion='{$data["direccion"]}', 
+                telefono='{$data["telefono"]}', 
+                email='{$data["email"]}', 
+                foto=IF('{$img}'='', foto, '{$img}'), 
+                genero='{$data["genero"]}', 
+                latitud='{$data["latitud"]}', 
+                longitud='{$data["longitud"]}', 
+                id_grado='{$data["id_grado"]}', 
+                id_seccion='{$data["id_seccion"]}', 
+                id_school='{$data["id_school"]}'
+            WHERE id_alumno={$data["id_alumno"]}
+        ");
     }
 
     public function getAlumnoByName($nombre) {

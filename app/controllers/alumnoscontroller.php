@@ -58,20 +58,22 @@ class AlumnosController extends Controller {
 
     public function guardar() {
         $img = "";
-        if (isset($_FILES)) {
-            if (is_uploaded_file($_FILES["foto"]["tmp_name"])) {
-                if (($_FILES["foto"]["type"] == "image/png") ||
-                    ($_FILES["foto"]["type"] == "image/jpeg")
-                ) {
-                    copy(
-                        $_FILES["foto"]["tmp_name"],
-                        __DIR__ . "/../../public_html/fotos/" . $_FILES["foto"]["name"]
-                    )
-                        or die("No se pudo copiar el archivo");
-                    $img = URL . "public_html/fotos/" . $_FILES["foto"]["name"];
-                }
+        if (isset($_FILES["foto"]) && is_uploaded_file($_FILES["foto"]["tmp_name"])) {
+            if (($_FILES["foto"]["type"] == "image/png") || ($_FILES["foto"]["type"] == "image/jpeg")) {
+                copy(
+                    $_FILES["foto"]["tmp_name"],
+                    __DIR__ . "/../../public_html/fotos/" . $_FILES["foto"]["name"]
+                ) or die("No se pudo copiar el archivo");
+                $img = URL . "public_html/fotos/" . $_FILES["foto"]["name"];
+            }
+        } elseif ($_POST["id_alumno"] != 0) {
+            // Si no se subió una nueva foto y estamos editando, mantener la foto existente
+            $alumno = $this->alumno->getOneAlumno($_POST["id_alumno"]);
+            if (count($alumno) > 0) {
+                $img = $alumno[0]['foto'];
             }
         }
+    
         if ($_POST["id_alumno"] == 0) {
             $datosAlumno = $this->alumno->getAlumnoByName($_POST["nombre_completo"]);
             if (count($datosAlumno) > 0) {
