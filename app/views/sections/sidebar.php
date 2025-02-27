@@ -19,7 +19,8 @@
     <a href="<?php echo URL;?>alumnos"><img src="public_html/iconos/alumnos24px.png"> Alumnos</a>
     <hr>
     <a href="<?php echo URL;?>usuarios"><img src="public_html/iconos/worldgraduado24px.png"> Usuarios</a>
-    <a href="<?php echo URL;?>reportes"><img src="public_html/iconos/reportes24px.png"> Reportes</a>
+    <a href="<?php echo URL;?>reportesescuelas"><img src="public_html/iconos/reportes24px.png"> Reportes Escuela</a>
+    <a href="<?php echo URL;?>reportesalumnos"><img src="public_html/iconos/reportes24px.png"> Reportes Alumnos</a>
     <hr>
     <!-- Cerrar Sesion -->
     <a href="<?php echo URL;?>login/cerrar" class="logout" tabindex="-1" aria-disabled="true"><img src="public_html/iconos/logout24px.png"> Cerrar Sesión</a>

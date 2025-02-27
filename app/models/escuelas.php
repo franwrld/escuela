@@ -129,4 +129,34 @@ class Escuelas extends BaseDeDatos {
         return $this->executeQuery("SELECT id_school, nombre, direccion, email, latitud, longitud, id_user FROM school WHERE id_user ='$id_user';");
     }
 
+    // Reportes
+    public function getEscuelasReporte($data) {
+        $condicion = "";
+        if (isset($data["id_school"]) && $data["id_school"] != "0") {
+            $condicion .= " AND s.id_school = '{$data["id_school"]}'";
+        }
+    
+        $query = "
+            SELECT 
+                s.id_school, 
+                s.nombre AS nombre_escuela, 
+                s.direccion, 
+                s.email, 
+                u.nombre AS nombre_usuario, 
+                COUNT(a.id_alumno) AS total_alumnos
+            FROM 
+                school s 
+            LEFT JOIN 
+                alumnos a ON s.id_school = a.id_school 
+            LEFT JOIN 
+                usuarios u ON s.id_user = u.id_user
+            WHERE 
+                1=1 $condicion 
+            GROUP BY 
+                s.id_school, s.nombre, s.direccion, s.email, u.nombre
+        ";
+    
+        return $this->executeQuery($query);
+    }
+
 }

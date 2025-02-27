@@ -134,10 +134,10 @@
                         <option selected>Seleccione una seccion...</option>
                     </select>
                 </div>
-
+                <label class="form-label">Escuela</label>
                 <div class="mb-3">
-                    <label class="form-label">Escuela</label>
-                    <select class="form-select" id="id_school" name="id_school" style="width: 100%;">
+                    
+                    <select class="form-select" id="id_school" name="id_school" style="width: 50%;">
                         <option selected>Seleccione una escuela...</option>
                     </select>
                 </div>

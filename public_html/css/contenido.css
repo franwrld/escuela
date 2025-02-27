@@ -165,3 +165,18 @@
 .dropdown-item:hover {
     background-color: #f8f9fa;
 }
+
+.btnverreporte {
+  width: 136px;
+  height: 46px;
+  background-color: #19fb9b;
+  border: 1px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 17px;
+  transition: .4s;
+}
+
+.btnverreporte:hover {
+  box-shadow: 5px 6px 0px rgb(0, 0, 0);
+}
