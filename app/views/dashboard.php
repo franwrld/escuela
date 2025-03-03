@@ -27,7 +27,8 @@
                 <h4 class="titlelocation">Escuelas</h4>
                 <img class="locationimg" src="public_html/iconos/locationrojo32px.png">
             </div>
-            
+            <!-- Loader -->
+            <div class="loader"></div>
             <!-- Mapa de Google -->
             <div id="map" class="mapa"></div>
         </div>

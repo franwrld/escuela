@@ -16,7 +16,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <!-- API de Google Maps -->
     
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfUAuwD0h0m8nr6gHDWJT0zXXM0rjs5mo&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfUAuwD0h0m8nr6gHDWJT0zXXM0rjs5mo" async defer></script>
+
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- Icono del sistema en el navegador -->

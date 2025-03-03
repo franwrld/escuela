@@ -10,3 +10,4 @@
 <link rel="stylesheet" href="<?php echo URL;?>public_html/css/contenido.css">
 <link rel="stylesheet" href="<?php echo URL;?>public_html/css/header.css">
 <link rel="stylesheet" href="<?php echo URL;?>public_html/css/modal.css">
+<link rel="stylesheet" href="<?php echo URL;?>public_html/css/loader.css">
