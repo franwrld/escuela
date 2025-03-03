@@ -21,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- Icono del sistema en el navegador -->
-    <link rel="shortcut icon" href="<?php echo URL;?>public_html/iconos/logo200px.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo URL;?>public_html/iconos/worldgraduado24px.png" type="image/x-icon">
     <!-- Titulo Dinamico -->
     <title><?php echo isset($title) ? $title : 'Escuela'; ?></title>
 </head>
