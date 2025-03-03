@@ -141,6 +141,16 @@
                     </select>
                 </div>
 
+                
+                <h4>Marca en el mapa la ubicación de la residencia del alumno.</h4>
+                <hr>
+                <div id="mapAlumno" style="height: 400px; max-width: 100%; margin: 0 auto;"></div>
+
+                <div class="mb-3">
+                    <label class="form-label">Dirección</label>
+                    <input name="direccion" id="direccion" type="text" class="form-control" placeholder="Dirección" aria-label="Dirección" required>
+                </div>
+
                 <div class="mb-3">
                     <label class="form-label">Latitud</label>
                     <input name="latitud" id="latitud" type="text" class="form-control" placeholder="Latitud" aria-label="Latitud" readonly>
@@ -149,13 +159,6 @@
                 <div class="mb-3">
                     <label class="form-label">Longitud</label>
                     <input name="longitud" id="longitud" type="text" class="form-control" placeholder="Longitud" aria-label="Longitud" readonly>
-                </div>
-
-                <div id="mapAlumno" style="height: 400px; max-width: 100%; margin: 0 auto;"></div>
-
-                <div class="mb-3">
-                    <label class="form-label">Dirección</label>
-                    <input name="direccion" id="direccion" type="text" class="form-control" placeholder="Dirección" aria-label="Dirección" required>
                 </div>
 
                 <div class="row mb-3">
