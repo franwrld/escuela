@@ -31,7 +31,7 @@ class EscuelaUser extends BaseDeDatos {
                 a.longitud AS longitud_alumno
             FROM 
                 school s
-            INNER JOIN 
+            LEFT JOIN 
                 alumnos a ON s.id_school = a.id_school
             WHERE 
                 s.id_school = '{$id_school}'
