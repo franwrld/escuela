@@ -54,8 +54,8 @@ CREATE TABLE alumnos (
     id_grado INT NOT NULL,
     id_seccion INT NOT NULL,
     id_school INT NOT NULL,
-    FOREIGN KEY (id_grado) REFERENCES grados(id_grado) ON DELETE SET NULL,
-    FOREIGN KEY (id_seccion) REFERENCES secciones(id_seccion) ON DELETE SET NULL,
+    FOREIGN KEY (id_grado) REFERENCES grados(id_grado) ON DELETE CASCADE,
+    FOREIGN KEY (id_seccion) REFERENCES secciones(id_seccion) ON DELETE CASCADE,
     FOREIGN KEY (id_school) REFERENCES school(id_school) ON DELETE CASCADE
 );
 
